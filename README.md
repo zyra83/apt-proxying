@@ -25,3 +25,56 @@ Acquire::http {
 Attention ça merde pour les dépôts en https, le proxy ne fait pas son boulo, du coup le dépôt docker par exemple ne passera pas le proxy cache correctement.
 Il existe un réglage pour saute le proxy en https mais ça règle pas le problème de cache des dépôts HTTPS.
 ça va surement finir en mirroir de dépôt avec apt-mirror...
+
+
+```
+# Source depuis https://debgen.simplylinux.ch/
+# apt install curl wget apt-transport-https dirmngr
+
+#------------------------------------------------------------------------------#
+#                   OFFICIAL DEBIAN REPOS
+#------------------------------------------------------------------------------#
+
+###### Debian Main Repos
+deb http://deb.debian.org/debian/ buster main contrib non-free
+
+deb http://deb.debian.org/debian/ buster-updates main contrib non-free
+
+deb http://deb.debian.org/debian-security buster/updates main
+
+deb http://ftp.debian.org/debian buster-backports main
+
+#------------------------------------------------------------------------------#
+#                   OFFICIAL DEBIAN REPOS
+#------------------------------------------------------------------------------#
+
+###### Debian Main Repos
+deb http://deb.debian.org/debian/ stretch main contrib non-free
+
+deb http://deb.debian.org/debian/ stretch-updates main contrib non-free
+
+deb http://deb.debian.org/debian-security stretch/updates main
+
+deb http://ftp.debian.org/debian stretch-backports main
+
+#------------------------------------------------------------------------------#
+#                   OFFICIAL DEBIAN REPOS
+#------------------------------------------------------------------------------#
+
+###### Debian Main Repos
+deb http://deb.debian.org/debian/ jessie main contrib non-free
+
+deb http://deb.debian.org/debian/ jessie-updates main contrib non-free
+
+deb http://deb.debian.org/debian-security jessie/updates main
+
+deb http://ftp.debian.org/debian jessie-backports main
+
+#------------------------------------------------------------------------------#
+#                   Nettoie tout l'inutile
+#------------------------------------------------------------------------------#
+
+clean http://ftp.debian.org/debian
+clean http://deb.debian.org/debian/
+clean http://deb.debian.org/debian-security
+```
